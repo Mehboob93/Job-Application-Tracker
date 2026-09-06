@@ -6,68 +6,84 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8fafc;
-    color: #1e293b;
+    background-color: #f5f7f6;
+    color: #1f2937;
 }
+
+
+/* Header */
 
 header {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #0f172a;
+    padding: 42px 20px;
+    background-color: #134e4a;
     color: white;
 }
 
 header h1 {
     margin-bottom: 10px;
+    font-size: 32px;
 }
 
 header p {
-    color: #cbd5e1;
+    color: #ccfbf1;
 }
+
+
+/* Main */
 
 main {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 25px auto;
     padding: 0 20px;
 }
+
+
+/* Dashboard */
 
 .dashboard {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .stat-card {
     background-color: white;
     padding: 25px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
 .stat-card h3 {
-    font-size: 16px;
-    color: #64748b;
+    font-size: 15px;
+    color: #6b7280;
     margin-bottom: 10px;
 }
 
 .stat-card p {
     font-size: 30px;
     font-weight: bold;
-    color: #0f172a;
+    color: #111827;
 }
+
+
+/* Form */
 
 .application-form {
     background-color: white;
     padding: 30px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
     margin-bottom: 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
 .application-form h2 {
     margin-bottom: 20px;
+    color: #1f2937;
 }
 
 #jobForm {
@@ -79,30 +95,48 @@ main {
 #jobForm input,
 #jobForm select {
     padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
     font-size: 15px;
+    background-color: #fff;
 }
+
+#jobForm input:focus,
+#jobForm select:focus,
+#notes:focus,
+#search:focus,
+#filterStatus:focus,
+#sortDate:focus {
+    outline: none;
+    border-color: #0f766e;
+}
+
+
+/* Form Buttons */
 
 #jobForm button {
     padding: 12px;
     border: none;
-    border-radius: 5px;
-    background-color: #0f172a;
-    color: white;
+    border-radius: 6px;
+    background-color: #111827;
+    color: #ffffff;
     cursor: pointer;
     font-size: 15px;
 }
 
 #jobForm button:hover {
-    background-color: #334155;
+    background-color: #000000;
 }
+
+
+/* Applications */
 
 .applications {
     background-color: white;
     padding: 30px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
 .applications-header {
@@ -112,51 +146,83 @@ main {
     margin-bottom: 25px;
 }
 
-#search {
-    padding: 10px 12px;
-    width: 250px;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-.application-card {
-    padding: 20px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.application-card h3 {
-    margin-bottom: 10px;
-}
-
-.application-card p {
-    margin-bottom: 5px;
-    color: #64748b;
-}
-
-.application-card button {
-    margin-top: 15px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #dc2626;
-    color: white;
-    cursor: pointer;
-}
-
 .applications-header > div {
     display: flex;
     gap: 10px;
 }
 
-#filterStatus {
+
+/* Search & Filters */
+
+#search {
     padding: 10px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
+    width: 250px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
     font-size: 15px;
 }
+
+#filterStatus,
+#sortDate {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: white;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+
+/* Application Cards */
+
+.application-card {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.application-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(15, 118, 110, 0.10);
+}
+
+.application-card h3 {
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.application-card p {
+    margin-bottom: 8px;
+    color: #6b7280;
+}
+
+
+/* Application Buttons */
+
+.application-card button {
+    margin-top: 10px;
+    margin-right: 8px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #dc2626;
+    color: white;
+    cursor: pointer;
+}
+
+.application-card button:hover {
+    opacity: 0.9;
+}
+
+.application-card button:first-of-type {
+    background-color: #0f766e;
+}
+
+
+/* Status */
 
 .status {
     display: inline-block;
@@ -167,8 +233,8 @@ main {
 }
 
 .status.applied {
-    background-color: #e2e8f0;
-    color: #475569;
+    background-color: #e6fffb;
+    color: #0f766e;
 }
 
 .status.interview {
@@ -187,23 +253,30 @@ main {
 }
 
 
-.application-card {
-    transition: transform 0.3s, box-shadow 0.3s;
+/* Notes */
+
+#notes {
+    grid-column: 1 / -1;
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
 }
 
-.application-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+/* Empty State */
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
 }
 
-.application-card button {
-    margin-right: 8px;
-}
 
-.application-card button:first-of-type {
-    background-color: #0f172a;
-}
-
+/* Mobile */
 
 @media (max-width: 768px) {
 
@@ -252,52 +325,8 @@ main {
     }
 
     #search,
-    #filterStatus {
+    #filterStatus,
+    #sortDate {
         width: 100%;
     }
-}
-
-.empty-message {
-    text-align: center;
-    padding: 30px;
-    color: #64748b;
-}
-
-
-#notes {
-    grid-column: 1 / -1;
-    min-height: 100px;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 15px;
-    resize: vertical;
-}
-
-#notes:focus {
-    outline: none;
-    border-color: #0f172a;
-}
-
-.application-card p {
-    margin-bottom: 8px;
-}
-
-.application-card h3 {
-    margin-bottom: 12px;
-}
-
-.application-card button {
-    margin-top: 10px;
-}
-
-#sortDate {
-    padding: 10px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: white;
-    color: #1e293b;
-    cursor: pointer;
 }
