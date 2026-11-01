@@ -1,11 +1,4 @@
 "use strict";
-
-/* ==========================================================================
-   Job Tracker
-   Vanilla JS: CRUD, search, status filter, sorting, drag and drop,
-   dashboard stats, CSV export and localStorage persistence.
-   ========================================================================== */
-
 const STORAGE_KEY = "jobTracker.applications.v1";
 const VIEW_KEY = "jobTracker.view";
 const THEME_KEY = "jobTracker.theme";
@@ -102,7 +95,7 @@ let firstVisit = false;
 function loadApps() {
   const raw = store.get(STORAGE_KEY);
 
-  // First visit: start with example applications so the app never looks empty.
+ 
   if (raw === null) {
     firstVisit = true;
     return sampleApps();
@@ -217,7 +210,7 @@ const els = {
   viewButtons: document.querySelectorAll('[data-action="view"]'),
 };
 
-/* ---------- Rendering: header area ---------- */
+/* ---------- Rendering: header ---------- */
 function renderHero() {
   const total = state.apps.length;
 
@@ -573,7 +566,7 @@ function toast(message, { actionLabel, onAction } = {}) {
 /* ---------- CSV export ---------- */
 function csvCell(value) {
   let s = String(value);
-  if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; // neutralise spreadsheet formulas
+  if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; 
   return `"${s.replace(/"/g, '""')}"`;
 }
 
@@ -679,7 +672,6 @@ document.addEventListener("change", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  // Enter or Space on a focused card opens it
   if ((event.key === "Enter" || event.key === " ") && event.target.matches?.(".card")) {
     event.preventDefault();
     const app = state.apps.find((a) => a.id === event.target.dataset.id);
@@ -713,8 +705,7 @@ els.sort.addEventListener("change", () => {
 els.form.addEventListener("submit", onSubmit);
 els.form.elements.notes.addEventListener("input", updateNotesCount);
 
-// Clicking the dimmed backdrop closes the drawer (the form fills the dialog, so
-// only backdrop clicks land on the dialog element itself).
+
 els.drawer.addEventListener("click", (event) => {
   if (event.target === els.drawer) closeDrawer();
 });
@@ -764,7 +755,7 @@ els.board.addEventListener("drop", (event) => {
   render();
 });
 
-/* ---------- Init ---------- */
+//init
 applyTheme(document.documentElement.dataset.theme || "light");
 buildFilterControls();
 render();
